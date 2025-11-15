@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>7Б — История Класса</title>
+
+<style>
+/* ---------------- ОСНОВНЫЕ СТИЛИ ---------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s ease;
+}
+
+/* Цветовые темы */
+:root {
+    --bg: #ffffff;
+    --text: #111;
+    --card: #f1f1f1;
+}
+
+.dark {
+    --bg: #0f0f0f;
+    --text: #f5f5f5;
+    --card: #1a1a1a;
+}
+
+/* ---------------- ШАПКА ---------------- */
+
+header {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.35);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.dark header {
+    background: rgba(0,0,0,0.35);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+}
+
+nav a {
+    margin-left: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--text);
+    transition: 0.2s;
+}
+
+nav a:hover {
+    opacity: 0.6;
+}
+
+.theme-btn {
+    padding: 8px 15px;
+    border-radius: 10px;
+    background: var(--card);
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.25s;
+}
+
+.theme-btn:hover {
+    opacity: 0.7;
+}
+
+/* ---------------- КОНТЕЙНЕР СТРАНИЦ ---------------- */
+
+.page {
+    display: none;
+    padding: 40px 20px;
+    animation: fade 0.4s ease;
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.active {
+    display: block;
+}
+
+/* ---------------- КАРТОЧКИ ---------------- */
+
+.card {
+    background: var(--card);
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 16px;
+    max-width: 800px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* ---------------- АДАПТАЦИЯ ---------------- */
+
+@media(max-width: 700px) {
+    nav {
+        display: none;
+    }
+    header {
+        justify-content: center;
+    }
+    .logo {
+        font-size: 20px;
+    }
+    .card { 
+        margin: 15px auto;
+        padding: 18px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <div class="logo">7Б</div>
+
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#history">История</a>
+        <a href="#legends">Легенды</a>
+        <a href="#stars">Знаменитости</a>
+        <a href="#experiments">Эксперименты</a>
+        <a href="#best">Лучшие</a>
+        <a href="#gone">Ушедшие</a>
+        <a href="#teachers">Учителя</a>
+        <a href="#bio">Биографии</a>
+        <a href="#devs">Разработчики</a>
+    </nav>
+
+    <button class="theme-btn" id="themeBtn">Темно/Светло</button>
+</header>
+
+<!-- ----------------- СТРАНИЦЫ ----------------- -->
+
+<div id="home" class="page active">
+    <div class="card">
+        <h1>Добро пожаловать в 7Б!</h1><br>
+        <p>Самый легендарный, мощный и дружный класс. Здесь собрана наша история, биографии, легенды и самые яркие моменты школьной жизни.</p>
+    </div>
+</div>
+
+<div id="history" class="page">
+    <div class="card">
+        <h1>История появления класса</h1><br>
+        <p>Наш класс начал свой путь в 2023 году, когда мы впервые собрались в 5 классе...</p>
+    </div>
+</div>
+
+<div id="legends" class="page">
+    <div class="card">
+        <h1>Легенды класса</h1>
+        <p>Здесь собраны люди, события и истории, которые стали легендами.</p>
+    </div>
+</div>
+
+<div id="stars" class="page">
+    <div class="card">
+        <h1>Знаменитости</h1>
+        <p>Самые яркие, популярные и талантливые ученики 7Б.</p>
+    </div>
+</div>
+
+<div id="experiments" class="page">
+    <div class="card">
+        <h1>Эксперименты</h1>
+        <p>Наши школьные проекты, исследования и разработки.</p>
+    </div>
+</div>
+
+<div id="best" class="page">
+    <div class="card">
+        <h1>Лучшие ученики</h1>
+        <p>Те, кто показал самые высокие результаты.</p>
+    </div>
+</div>
+
+<div id="gone" class="page">
+    <div class="card">
+        <h1>Ушедшие из класса</h1>
+        <p>Те, кто был частью нашей истории.</p>
+    </div>
+</div>
+
+<div id="teachers" class="page">
+    <div class="card">
+        <h1>Учителя</h1>
+        <p>Учителя, которые внесли вклад в развитие нашего класса.</p>
+    </div>
+</div>
+
+<div id="bio" class="page">
+    <div class="card">
+        <h1>Биография учеников</h1>
+        <p>Каждый ученик — уникальная история.</p>
+    </div>
+</div>
+
+<div id="devs" class="page">
+    <div class="card">
+        <h1>Разработчики сайта</h1>
+        <p>Создатели, дизайнеры, редакторы и помощники проекта.</p>
+    </div>
+</div>
+
+<script>
+/* ------------------- ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ ------------------- */
+const themeBtn = document.getElementById("themeBtn");
+themeBtn.onclick = () => document.body.classList.toggle("dark");
+
+/* ------------------- ПЕРЕКЛЮЧЕНИЕ СТРАНИЦ ------------------- */
+function showPage() {
+    const pages = document.querySelectorAll(".page");
+    const id = location.hash.substring(1) || "home";
+
+    pages.forEach(p => p.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+}
+
+window.addEventListener("hashchange", showPage);
+showPage();
+</script>
+
+</body>
+</html>
+
+
+
